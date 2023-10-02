@@ -7,6 +7,9 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: "login",
+});
 import { useAuthStore } from "../stores/useAuthStore";
 
 const form = ref({
@@ -15,11 +18,13 @@ const form = ref({
 });
 
 const auth = useAuthStore();
+const router = useRouter();
 
 async function login() {
   await auth.login(form.value);
 
   if (auth.isLoggedIn) {
+    router.push({ path: "/dashboard" });
   }
 }
 </script>
