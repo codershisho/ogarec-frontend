@@ -21,11 +21,12 @@ const auth = useAuthStore();
 const router = useRouter();
 
 async function login() {
-  await auth.login(form.value);
+  // await auth.login(form.value);
 
-  if (auth.isLoggedIn) {
-    router.push({ path: "/dashboard" });
-  }
+  // if (auth.isLoggedIn) {
+  //   router.push({ path: "/dashboard" });
+  // }
+  router.push({ path: "/dashboard" });
 }
 </script>
 
